@@ -204,3 +204,29 @@ textarea:focus {
 .prose ul {
   padding-left: 18px;
 }
+.brand-block{
+  display:flex; flex-direction:column; line-height:1.2;
+}
+.brand-row{
+  display:flex; align-items:center; gap:10px;
+}
+.logo{
+  width:28px; height:28px; color:var(--accent);
+  flex:0 0 auto; transform: translateY(1px);
+}
+.brand{ font-weight:700; letter-spacing:.2px; }
+.subtitle{
+  font-size:.85rem; color:var(--muted); margin-top:2px; letter-spacing:.5px;
+}
+
+/* volitelné: jemná animace jiskry při hoveru na brand */
+.brand-row:hover .logo path:first-child{
+  transform-origin: 48px 14px;
+  animation: spark .8s ease-out;
+}
+@keyframes spark{
+  0%{ transform: scale(0.7) rotate(0deg); opacity:.6; }
+  60%{ transform: scale(1.15) rotate(12deg); opacity:1; }
+  100%{ transform: scale(1) rotate(0deg); opacity:.9; }
+}
+
