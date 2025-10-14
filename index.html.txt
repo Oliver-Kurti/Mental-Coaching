@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moje stránka</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }
+    header { margin-bottom: 24px; }
+    nav a { margin-right: 10px; }
+    footer { margin-top: 40px; font-size: 0.9em; color: #555; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Vítej na mém webu!</h1>
+    <p>Tento web běží zcela zdarma díky GitHub Pages.</p>
+  </header>
+  <main>
+    <p>Zde můžeš psát o sobě, projektech nebo čemkoliv dalším.</p>
+  </main>
+  <footer>© 2025 Tvoje jméno</footer>
+</body>
+</html>
