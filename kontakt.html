@@ -10,12 +10,23 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="index.html">Moje stránka</a>
-    <nav class="nav">
-      <a class="nav-link" href="index.html">Domů</a>
-      <a class="nav-link" href="o-mne.html">O mně</a>
-      <a class="nav-link active" href="kontakt.html">Kontakt</a>
-    </nav>
+    <div class="brand-block">
+  <div class="brand-row">
+    <!-- Logo: kovadlina + jiskra (inline SVG, mění barvu podle --accent) -->
+    <svg class="logo" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+      <!-- jiskra (mentální aha-moment) -->
+      <path d="M48 10 l2 4 l4 2 l-4 2 l-2 4 l-2-4 l-4-2 l4-2 z" fill="currentColor" opacity="0.9"/>
+      <!-- kovadlina -->
+      <path d="M6 32
+               c6 0 10 4 16 4 h10 v6 h-8 l-4 6 h24 l-4-6 h-6 v-6 h10
+               c8 0 14-6 14-12 v-4 h-8 l-6 6 h-30 c-6 0-8 2-8 6z"
+            fill="currentColor"/>
+    </svg>
+    <a class="brand" href="index.html">Mental Coaching</a>
+  </div>
+  <span class="subtitle">Oliver Kurti</span>
+</div>
+
   </header>
 
   <main class="container">
@@ -57,3 +68,4 @@
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
+
