@@ -1,68 +1,206 @@
-:root{
-  --bg:#0b0c0e; --panel:#14161a; --text:#e6e6e6; --muted:#a0a4ab; --accent:#7cdaf9; --line:#23262c;
+:root {
+  --bg: #0b0c0e;
+  --panel: #14161a;
+  --text: #e6e6e6;
+  --muted: #a0a4ab;
+  --accent: #7cdaf9;
+  --line: #23262c;
 }
 
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{
-  background:var(--bg); color:var(--text); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;
+* {
+  box-sizing: border-box;
 }
-a{color:var(--accent); text-decoration:none}
-a:hover{text-decoration:underline}
 
-.container{max-width:900px; margin:0 auto; padding:24px}
-
-.site-header{
-  display:flex; justify-content:space-between; align-items:center;
-  padding:16px 24px; border-bottom:1px solid var(--line); background:rgba(10,10,10,.5); position:sticky; top:0; backdrop-filter:saturate(140%) blur(6px); z-index:10;
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
-.brand{font-weight:700; letter-spacing:.2px}
-.nav{display:flex; gap:14px}
-.nav-link{padding:6px 10px; border-radius:10px}
-.nav-link.active, .nav-link:hover{background:var(--panel); text-decoration:none}
 
-.hero{padding:40px 0}
-.hero h1{font-size:clamp(28px,4vw,40px); margin:0 0 8px}
-.accent{color:var(--accent)}
-.cta-row{display:flex; gap:12px; margin-top:16px; flex-wrap:wrap}
-
-.btn{
-  display:inline-block; padding:10px 16px; border-radius:12px;
-  border:1px solid var(--line); background:var(--panel); color:var(--text);
+body {
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, sans-serif;
 }
-.btn.ghost{background:transparent}
 
-.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:24px}
-.card{
-  background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:18px;
-  box-shadow:0 1px 0 rgba(0,0,0,.3), 0 12px 24px -12px rgba(0,0,0,.4);
+a {
+  color: var(--accent);
+  text-decoration: none;
 }
-.card h2{margin:0 0 8px}
-.card-link{display:inline-block; margin-top:10px}
 
-.form-card form{display:grid; gap:12px; margin-top:12px}
-label{display:grid; gap:6px; font-weight:600}
-input, textarea{
-  background:#0f1114; color:var(--text); border:1px solid var(--line);
-  border-radius:12px; padding:10px 12px; outline:none;
+a:hover {
+  text-decoration: underline;
 }
-input:focus, textarea:focus{border-color:var(--accent); box-shadow:0 0 0 3px rgba(124,218,249,.15)}
 
-.site-footer{border-top:1px solid var(--line); padding:18px 24px; color:var(--muted); text-align:center; margin-top:40px}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+}
 
-/* Lepší typografie pro dlouhý text */
-.prose h1, .prose h2{margin:0 0 8px}
-.prose p, .prose ul{margin:0 0 12px}
-.prose ul{padding-left:18px}
+/* ---------- HLAVIČKA ---------- */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(10, 10, 10, 0.5);
+  position: sticky;
+  top: 0;
+  backdrop-filter: saturate(140%) blur(6px);
+  z-index: 10;
+}
+
+/* nový blok s názvem a podtitulkem */
 .brand-block {
   display: flex;
   flex-direction: column;
   line-height: 1.2;
 }
 
+.brand {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
 .subtitle {
   font-size: 0.85rem;
-  color: var(--muted);
+  color: var(--accent);
   margin-top: 2px;
   letter-spacing: 0.5px;
+}
+
+.nav {
+  display: flex;
+  gap: 14px;
+}
+
+.nav-link {
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  background: var(--panel);
+  text-decoration: none;
+}
+
+/* ---------- HERO SEKCIA ---------- */
+.hero {
+  padding: 40px 0;
+}
+
+.hero h1 {
+  font-size: clamp(28px, 4vw, 40px);
+  margin: 0 0 8px;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.cta-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+/* ---------- TLAČÍTKA ---------- */
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--text);
+  transition: background 0.2s ease;
+}
+
+.btn:hover {
+  background: #1b1e22;
+}
+
+.btn.ghost {
+  background: transparent;
+}
+
+/* ---------- KARTY ---------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3), 0 12px 24px -12px rgba(0, 0, 0, 0.4);
+}
+
+.card h2 {
+  margin: 0 0 8px;
+}
+
+.card-link {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/* ---------- FORMULÁŘ ---------- */
+.form-card form {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+}
+
+input,
+textarea {
+  background: #0f1114;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 12px;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(124, 218, 249, 0.15);
+}
+
+/* ---------- PATIČKA ---------- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 18px 24px;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* ---------- TYPOGRAFIE ---------- */
+.prose h1,
+.prose h2 {
+  margin: 0 0 8px;
+}
+
+.prose p,
+.prose ul {
+  margin: 0 0 12px;
+}
+
+.prose ul {
+  padding-left: 18px;
 }
