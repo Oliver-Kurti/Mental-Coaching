@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kontakt — Moje stránka</title>
+  <meta name="description" content="Jak mě kontaktovat a domluvit si spolupráci." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">Moje stránka</a>
+    <nav class="nav">
+      <a class="nav-link" href="index.html">Domů</a>
+      <a class="nav-link" href="o-mne.html">O mně</a>
+      <a class="nav-link active" href="kontakt.html">Kontakt</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card form-card">
+      <h1>Napiš mi</h1>
+      <p>Vyplň formulář nebo mi napiš e-mail: <a href="mailto:oliver@example.com">oliver@example.com</a></p>
+
+      <!-- Varianta A: mailto (funguje hned) -->
+      <form action="mailto:oliver@example.com" method="post" enctype="text/plain">
+        <label>
+          Jméno
+          <input required name="jmeno" type="text" placeholder="Tvé jméno" />
+        </label>
+        <label>
+          E-mail
+          <input required name="email" type="email" placeholder="tvoje@domena.cz" />
+        </label>
+        <label>
+          Zpráva
+          <textarea required name="zprava" rows="6" placeholder="S čím potřebuji pomoct…"></textarea>
+        </label>
+        <button class="btn" type="submit">Odeslat</button>
+      </form>
+
+      <!--
+        Varianta B: Formspree (doporučeno)
+        1) založ si účet na formspree.io
+        2) vytvoř endpoint a nahraď akci níže, např. action="https://formspree.io/f/abcde"
+        <form action="https://formspree.io/f/TVUJ_KOD" method="POST">
+          ...
+        </form>
+      -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="year"></span> Oliver</small>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

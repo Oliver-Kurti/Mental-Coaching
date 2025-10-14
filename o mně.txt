@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>O mně — Moje stránka</title>
+  <meta name="description" content="Kdo jsem, čemu se věnuji a jak pracuji." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">Moje stránka</a>
+    <nav class="nav">
+      <a class="nav-link" href="index.html">Domů</a>
+      <a class="nav-link active" href="o-mne.html">O mně</a>
+      <a class="nav-link" href="kontakt.html">Kontakt</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <article class="prose">
+      <h1>O mně</h1>
+      <p>
+        Jsem Oliver. Věnuji se psychoterapii, mentoringu a mentálnímu koučinku sportovců
+        a baví mě sokratovský dialog. Níže je stručná timeline a oblasti, ve kterých můžeme spolupracovat.
+      </p>
+
+      <h2>Co dělám</h2>
+      <ul>
+        <li>Psychoterapie a koučovací výcvik — individuální práce a skupiny.</li>
+        <li>Mentoring dovedností učení se cizím jazykům.</li>
+        <li>Case studies a prevence kriminality (městské projekty).</li>
+      </ul>
+
+      <h2>Technologie & nástroje</h2>
+      <p>Preferuji jednoduchost: čisté HTML/CSS/JS, GitHub Pages, Formspree, Google Analytics.</p>
+
+      <h2>Reference / Projekty</h2>
+      <ul>
+        <li><a href="#" rel="noopener">Projekt A</a> — krátký popis.</li>
+        <li><a href="#" rel="noopener">Projekt B</a> — krátký popis.</li>
+      </ul>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="year"></span> Oliver</small>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
