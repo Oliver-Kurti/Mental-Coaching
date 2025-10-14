@@ -54,3 +54,15 @@ input:focus, textarea:focus{border-color:var(--accent); box-shadow:0 0 0 3px rgb
 .prose h1, .prose h2{margin:0 0 8px}
 .prose p, .prose ul{margin:0 0 12px}
 .prose ul{padding-left:18px}
+.brand-block {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+}
