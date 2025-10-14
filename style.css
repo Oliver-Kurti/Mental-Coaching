@@ -41,8 +41,9 @@ a:hover {
 /* ---------- HLAVIČKA ---------- */
 .site-header {
   display: flex;
+  align-items: flex-start;
   justify-content: space-between;
-  align-items: center;
+  gap: 16px;
   padding: 16px 24px;
   border-bottom: 1px solid var(--line);
   background: rgba(10, 10, 10, 0.5);
@@ -52,11 +53,25 @@ a:hover {
   z-index: 10;
 }
 
-/* nový blok s názvem a podtitulkem */
 .brand-block {
   display: flex;
   flex-direction: column;
   line-height: 1.2;
+  flex: 0 0 auto;
+}
+
+.brand-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 28px;
+  height: 28px;
+  color: var(--accent);
+  flex: 0 0 auto;
+  transform: translateY(1px);
 }
 
 .brand {
@@ -66,7 +81,7 @@ a:hover {
 
 .subtitle {
   font-size: 0.85rem;
-  color: var(--accent);
+  color: var(--muted);
   margin-top: 2px;
   letter-spacing: 0.5px;
 }
@@ -74,6 +89,8 @@ a:hover {
 .nav {
   display: flex;
   gap: 14px;
+  margin-left: auto;
+  flex: 0 0 auto;
 }
 
 .nav-link {
@@ -85,6 +102,27 @@ a:hover {
 .nav-link:hover {
   background: var(--panel);
   text-decoration: none;
+}
+
+/* animace jiskry nad kovadlinou */
+.brand-row:hover .logo path:first-child {
+  transform-origin: 48px 14px;
+  animation: spark 0.8s ease-out;
+}
+
+@keyframes spark {
+  0% {
+    transform: scale(0.7) rotate(0deg);
+    opacity: 0.6;
+  }
+  60% {
+    transform: scale(1.15) rotate(12deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.9;
+  }
 }
 
 /* ---------- HERO SEKCIA ---------- */
@@ -204,29 +242,23 @@ textarea:focus {
 .prose ul {
   padding-left: 18px;
 }
-.brand-block{
-  display:flex; flex-direction:column; line-height:1.2;
-}
-.brand-row{
-  display:flex; align-items:center; gap:10px;
-}
-.logo{
-  width:28px; height:28px; color:var(--accent);
-  flex:0 0 auto; transform: translateY(1px);
-}
-.brand{ font-weight:700; letter-spacing:.2px; }
-.subtitle{
-  font-size:.85rem; color:var(--muted); margin-top:2px; letter-spacing:.5px;
-}
 
-/* volitelné: jemná animace jiskry při hoveru na brand */
-.brand-row:hover .logo path:first-child{
-  transform-origin: 48px 14px;
-  animation: spark .8s ease-out;
-}
-@keyframes spark{
-  0%{ transform: scale(0.7) rotate(0deg); opacity:.6; }
-  60%{ transform: scale(1.15) rotate(12deg); opacity:1; }
-  100%{ transform: scale(1) rotate(0deg); opacity:.9; }
-}
+/* ---------- MOBILNÍ REZIM ---------- */
+@media (max-width: 640px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
+  .nav {
+    margin-top: 8px;
+  }
+
+  .hero {
+    text-align: left;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
