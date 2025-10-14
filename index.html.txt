@@ -1,24 +1,60 @@
 <!doctype html>
 <html lang="cs">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Moje stránka</title>
-  <style>
-    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }
-    header { margin-bottom: 24px; }
-    nav a { margin-right: 10px; }
-    footer { margin-top: 40px; font-size: 0.9em; color: #555; }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Domů — Moje stránka</title>
+  <meta name="description" content="Osobní web, projekty a kontakt." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <meta property="og:title" content="Moje stránka" />
+  <meta property="og:description" content="Osobní web, projekty a kontakt." />
 </head>
 <body>
-  <header>
-    <h1>Vítej na mém webu!</h1>
-    <p>Tento web běží zcela zdarma díky GitHub Pages.</p>
+  <header class="site-header">
+    <a class="brand" href="index.html">Moje stránka</a>
+    <nav class="nav">
+      <a class="nav-link active" href="index.html">Domů</a>
+      <a class="nav-link" href="o-mne.html">O mně</a>
+      <a class="nav-link" href="kontakt.html">Kontakt</a>
+    </nav>
   </header>
-  <main>
-    <p>Zde můžeš psát o sobě, projektech nebo čemkoliv dalším.</p>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Ahoj, jsem <span class="accent">Oliver</span>.</h1>
+      <p>Tady najdeš moje projekty, zkušenosti a jak se mi ozvat.</p>
+      <div class="cta-row">
+        <a class="btn" href="o-mne.html">Více o mně</a>
+        <a class="btn ghost" href="kontakt.html">Napsat zprávu</a>
+      </div>
+    </section>
+
+    <section class="cards">
+      <article class="card">
+        <h2>Aktuální projekt</h2>
+        <p>Krátký popis projektu. Co řeší, jaké technologie a kde je výsledek.</p>
+        <a class="card-link" href="#" aria-label="Odkaz na projekt">Zobrazit</a>
+      </article>
+      <article class="card">
+        <h2>Čím se zabývám</h2>
+        <p>Mentoring, psychoterapie, koučink, jazyky… a další oblasti zájmu.</p>
+        <a class="card-link" href="o-mne.html">Přečíst</a>
+      </article>
+      <article class="card">
+        <h2>Spolupráce</h2>
+        <p>Jasné kroky, jak začít spolupracovat — od prvního kontaktu po dodání.</p>
+        <a class="card-link" href="kontakt.html">Domluvit si hovor</a>
+      </article>
+    </section>
   </main>
-  <footer>© 2025 Tvoje jméno</footer>
+
+  <footer class="site-footer">
+    <small>© <span id="year"></span> Oliver — Všechna práva vyhrazena.</small>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
