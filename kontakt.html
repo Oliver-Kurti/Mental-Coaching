@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kontakt — Moje stránka</title>
+  <title>Kontakt — Mental Coaching</title>
   <meta name="description" content="Jak mě kontaktovat a domluvit si spolupráci." />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
@@ -11,30 +11,41 @@
 <body>
   <header class="site-header">
     <div class="brand-block">
-  <div class="brand-row">
-    <!-- Logo: kovadlina + jiskra (inline SVG, mění barvu podle --accent) -->
-    <svg class="logo" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-      <!-- jiskra (mentální aha-moment) -->
-      <path d="M48 10 l2 4 l4 2 l-4 2 l-2 4 l-2-4 l-4-2 l4-2 z" fill="currentColor" opacity="0.9"/>
-      <!-- kovadlina -->
-      <path d="M6 32
-               c6 0 10 4 16 4 h10 v6 h-8 l-4 6 h24 l-4-6 h-6 v-6 h10
-               c8 0 14-6 14-12 v-4 h-8 l-6 6 h-30 c-6 0-8 2-8 6z"
-            fill="currentColor"/>
-    </svg>
-    <a class="brand" href="index.html">Mental Coaching</a>
-  </div>
-  <span class="subtitle">Oliver Kurti</span>
-</div>
+      <div class="brand-row">
+        <svg class="logo" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <path d="M48 10 l2 4 l4 2 l-4 2 l-2 4 l-2-4 l-4-2 l4-2 z" fill="currentColor" opacity="0.9"/>
+          <path d="M6 32
+                   c6 0 10 4 16 4 h10 v6 h-8 l-4 6 h24 l-4-6 h-6 v-6 h10
+                   c8 0 14-6 14-12 v-4 h-8 l-6 6 h-30 c-6 0-8 2-8 6z"
+                fill="currentColor"/>
+        </svg>
+        <a class="brand" href="index.html">Mental Coaching</a>
+      </div>
+      <span class="subtitle">Oliver Kurti</span>
+    </div>
+
+    <nav class="nav">
+      <a class="nav-link" href="index.html">Domů</a>
+      <a class="nav-link" href="o-mne.html">O mně</a>
+      <a class="nav-link active" href="kontakt.html">Kontakt</a>
+    </nav>
   </header>
 
   <main class="container">
     <section class="card form-card">
-      <h1>Napiš mi</h1>
-      <p>Vyplň formulář nebo mi napiš e-mail: <a href="mailto:oliver@example.com">oliver@example.com</a></p>
+      <h1>Kontakt</h1>
+      <p>
+        Pro sjednání konzultace nebo spolupráce mě můžeš kontaktovat přímo:
+      </p>
 
-      <!-- Varianta A: mailto (funguje hned) -->
-      <form action="mailto:oliver@example.com" method="post" enctype="text/plain">
+      <ul>
+        <li><strong>E-mail:</strong> <a href="mailto:oliver.kurti@seznam.cz">oliver.kurti@seznam.cz</a></li>
+        <li><strong>Telefon:</strong> <a href="tel:+420775112502">+420 775 112 502</a></li>
+      </ul>
+
+      <p>Rád si s tebou domluvím nezávaznou úvodní konzultaci.</p>
+
+      <form action="mailto:oliver.kurti@seznam.cz" method="post" enctype="text/plain">
         <label>
           Jméno
           <input required name="jmeno" type="text" placeholder="Tvé jméno" />
@@ -49,23 +60,12 @@
         </label>
         <button class="btn" type="submit">Odeslat</button>
       </form>
-
-      <!--
-        Varianta B: Formspree (doporučeno)
-        1) založ si účet na formspree.io
-        2) vytvoř endpoint a nahraď akci níže, např. action="https://formspree.io/f/abcde"
-        <form action="https://formspree.io/f/TVUJ_KOD" method="POST">
-          ...
-        </form>
-      -->
     </section>
   </main>
 
   <footer class="site-footer">
-    <small>© <span id="year"></span> Oliver</small>
+    <small>© <span id="year"></span> Oliver Kurti</small>
   </footer>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
-
-
