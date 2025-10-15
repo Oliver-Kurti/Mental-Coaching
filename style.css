@@ -98,3 +98,29 @@ input:focus, textarea:focus{border-color:var(--accent); box-shadow:0 0 0 3px rgb
   .nav{ margin-top:8px }
   .cards{ grid-template-columns:1fr }
 }
+/* Sekce a utility */
+.section{ padding:32px 0; border-top:1px solid var(--line) }
+.section:first-of-type{ border-top:none }
+.lead{ color:var(--muted); margin:6px 0 16px }
+.muted{ color:var(--muted) }
+.hero-center{ text-align:center }
+.hero-center .cta-row{ justify-content:center }
+
+/* 3 sloupce pro „K čemu je koučink?“ */
+.features{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:14px }
+.feature{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:14px }
+
+/* Ceník */
+.pricing{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:10px }
+.price-card{ background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:18px; text-align:center }
+.price{ font-size:1.6rem; margin:6px 0 8px }
+
+/* Formulář „Objednat se“ */
+.stack{ display:grid; gap:12px; max-width:680px }
+.stack input, .stack textarea, .stack select{ width:100% }
+
+/* Reference */
+.testimonials{ display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); margin-top:12px }
+blockquote{ margin:0; padding:14px 16px; background:var(--panel); border:1px solid var(--line); border-radius:14px }
+blockquote footer{ margin-top:8px; color:var(--muted); font-size:.9rem }
+
