@@ -7,43 +7,61 @@
   <meta name="description" content="Jak mě kontaktovat a domluvit si spolupráci." />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <meta property="og:title" content="Kontakt — Mental Coaching" />
+  <meta property="og:description" content="Pro sjednání konzultace mě kontaktujte e-mailem nebo telefonem." />
 </head>
 <body>
- <header class="site-header">
-  <div class="brand-block">
-    <div class="brand-row">
-      <svg class="logo" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-        <path d="M48 10 l2 4 l4 2 l-4 2 l-2 4 l-2-4 l-4-2 l4-2 z" fill="currentColor" opacity="0.9"/>
-        <path d="M6 32
-                 c6 0 10 4 16 4 h10 v6 h-8 l-4 6 h24 l-4-6 h-6 v-6 h10
-                 c8 0 14-6 14-12 v-4 h-8 l-6 6 h-30 c-6 0-8 2-8 6z"
-              fill="currentColor"/>
-      </svg>
-      <a class="brand" href="index.html">Mental Coaching</a>
-    </div>
-    <span class="subtitle">Oliver Kurti</span>
+  <!-- dekorativní pozadí (kovadlina / watermark) -->
+  <div class="bg-anvil" aria-hidden="true">
+    <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="presentation">
+      <defs>
+        <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#22d3ee" stop-opacity="0.06"/>
+        </linearGradient>
+        <filter id="blur"><feGaussianBlur stdDeviation="20"/></filter>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grad)"/>
+      <g fill="#7cdaf9" opacity="0.08" filter="url(#blur)" transform="translate(80,140) scale(1.2)">
+        <path d="M0 150c40 0 65 30 110 30h70v48h-52l-26 44h160l-26-44h-44v-48h68c56 0 98-42 98-84v-28h-56l-38 40H64c-40 0-64 14-64 42z"/>
+        <path d="M530 0 l10 20 20 10 -20 10 -10 20 -10-20 -20-10 20-10z" />
+      </g>
+    </svg>
   </div>
 
-  <nav class="nav">
-    <a class="nav-link" href="index.html">Domů</a>
-    <a class="nav-link" href="o-mne.html">O mně</a>
-    <a class="nav-link" href="kontakt.html">Kontakt</a>
-  </nav>
-</header>
+  <header class="site-header">
+    <div class="brand-block">
+      <div class="brand-row">
+        <svg class="logo" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <path d="M48 10 l2 4 l4 2 l-4 2 l-2 4 l-2-4 l-4-2 l4-2 z" fill="currentColor" opacity="0.95"/>
+          <path d="M6 32
+                   c6 0 10 4 16 4 h10 v6 h-8 l-4 6 h24 l-4-6 h-6 v-6 h10
+                   c8 0 14-6 14-12 v-4 h-8 l-6 6 h-30 c-6 0-8 2-8 6z"
+                fill="currentColor"/>
+        </svg>
+        <a class="brand" href="index.html">Mental Coaching</a>
+      </div>
+      <span class="subtitle">Oliver Kurti</span>
+    </div>
 
+    <nav class="nav">
+      <a class="nav-link" href="index.html">Domů</a>
+      <a class="nav-link" href="o-mne.html">O mně</a>
+      <a class="nav-link active" href="kontakt.html">Kontakt</a>
+    </nav>
+  </header>
 
   <main class="container">
     <section class="card form-card">
       <h1>Kontakt</h1>
-      <p>
-        Pro sjednání konzultace nebo spolupráce mě můžete kontaktovat přímo:
-      </p>
+      <p>Pro sjednání konzultace nebo spolupráce mě můžete kontaktovat přímo:</p>
 
       <ul>
         <li><strong>E-mail:</strong> <a href="mailto:oliver.kurti@seznam.cz">oliver.kurti@seznam.cz</a></li>
-        <li><strong>Telefon:</strong> <a href="tel:+420775112502">+420 775 112 502</a></li>
+        <li><strong>Telefon:</strong> <a href="tel:+420775112502">+420&nbsp;775&nbsp;112&nbsp;502</a></li>
       </ul>
 
+      <p>Preferujete krátkou zprávu? Můžete použít i formulář níže:</p>
       <form action="mailto:oliver.kurti@seznam.cz" method="post" enctype="text/plain">
         <label>
           Jméno
@@ -57,16 +75,31 @@
           Zpráva
           <textarea required name="zprava" rows="6" placeholder="S čím potřebuji pomoct…"></textarea>
         </label>
-        <button class="btn" type="submit">Odeslat</button>
+        <button class="btn btn-primary" type="submit">Odeslat</button>
       </form>
     </section>
   </main>
 
+  <!-- kontaktní pásek dole (sticky) -->
+  <aside class="contact-bar">
+    <div class="contact-content">
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6l10 7L22 6v12H2zM2 6l10 7 10-7H2z" fill="currentColor"/></svg>
+        <a href="mailto:oliver.kurti@seznam.cz">oliver.kurti@seznam.cz</a>
+      </div>
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.2 2.4 3.2 4.4 5.6 5.6l2-2c.3-.3.8-.4 1.2-.2 1 .4 2 .6 3.1.6.7 0 1.2.5 1.2 1.2V20c0 .7-.5 1.2-1.2 1.2C9.9 21.2 2.8 14.1 2.8 5.2 2.8 4.5 3.3 4 4 4h3.2c.7 0 1.2.5 1.2 1.2 0 1.1.2 2.1.6 3.1.1.4 0 .9-.3 1.2l-2.1 2.1z" fill="currentColor"/></svg>
+        <a href="tel:+420775112502">+420&nbsp;775&nbsp;112&nbsp;502</a>
+      </div>
+    </div>
+  </aside>
+
   <footer class="site-footer">
-    <small>© <span id="year"></span> Oliver Kurti</small>
+    <small>© <span id="year"></span> Oliver Kurti • Built on GitHub Pages</small>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
-
