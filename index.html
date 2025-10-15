@@ -3,60 +3,134 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Domů — Mental Coaching</title>
-  <meta name="description" content="Mentální koučink pro ty, kdo chtějí růst a zvládat tlak." />
+  <title>Mental Coaching — Oliver Kurti</title>
+  <meta name="description" content="Mentální koučink: výkon, odolnost, rovnováha. Oliver Kurti." />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
 </head>
 <body>
-  <!-- HLAVIČKA -->
+  <!-- HLAVIČKA (ponecháváme tvůj styl + logo kovadliny) -->
   <header class="site-header">
     <div class="brand-block">
       <div class="brand-row">
-        <!-- malé logo (kovadlina + jiskra) -->
         <svg class="logo" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
           <path d="M48 10 l2 4 l4 2 l-4 2 l-2 4 l-2-4 l-4-2 l4-2 z" fill="currentColor" opacity="0.95"/>
           <path d="M6 32 c6 0 10 4 16 4 h10 v6 h-8 l-4 6 h24 l-4-6 h-6 v-6 h10
                    c8 0 14-6 14-12 v-4 h-8 l-6 6 h-30 c-6 0-8 2-8 6z" fill="currentColor"/>
         </svg>
-        <a class="brand" href="index.html">Mental Coaching</a>
+        <a class="brand" href="#domu">Mental Coaching</a>
       </div>
       <span class="subtitle">Oliver Kurti</span>
     </div>
 
     <nav class="nav">
-      <a class="nav-link active" href="index.html">Domů</a>
-      <a class="nav-link" href="o-mne.html">O mně</a>
-      <a class="nav-link" href="kontakt.html">Kontakt</a>
+      <a class="nav-link" href="#domu">Domů</a>
+      <a class="nav-link" href="#proc">K čemu je koučink?</a>
+      <a class="nav-link" href="#o-mne">O mně</a>
+      <a class="nav-link" href="#cenik">Ceník</a>
+      <a class="nav-link" href="#objednat">Objednat se</a>
+      <a class="nav-link" href="#reference">Reference</a>
+      <a class="nav-link" href="#kontakt">Kontakt</a>
     </nav>
   </header>
 
-  <!-- OBSAH -->
-  <main class="container">
-    <section class="hero">
-      <h1>Buduj <span class="accent">cestu</span>, ne výmluvy.</h1>
-      <p>Mentální koučink pro sportovce, studenty i profesionály.</p>
+  <main id="domu" class="container">
+    <!-- HERO -->
+    <section class="hero hero-center">
+      <h1>Změň <span class="accent">perspektivu</span>, změň svůj svět</h1>
+      <p class="lead">Mentální koučink: výkon, odolnost a rovnováha — ve sportu i v životě.</p>
       <div class="cta-row">
-        <a class="btn" href="o-mne.html">Více o mně</a>
-        <a class="btn ghost" href="kontakt.html">Napsat zprávu</a>
+        <a class="btn" href="#proc">Jak to funguje</a>
+        <a class="btn ghost" href="#objednat">Objednat se</a>
       </div>
     </section>
 
-    <section class="cards">
-       <article class="card">
-        <h2>Čím se zabývám</h2>
-        <p>Psychologie, koučink, sport... a další oblasti zájmu.</p>
-        <a class="card-link" href="o-mne.html">Přečíst</a>
-      </article>
-      <article class="card">
-        <h2>Spolupráce</h2>
-        <p>Jasné kroky, jak začít spolupracovat.</p>
-        <a class="card-link" href="kontakt.html">Domluvit si hovor</a>
-      </article>
+    <!-- K ČEMU JE KOUČINK -->
+    <section id="proc" class="section">
+      <h2>K čemu je mentální koučink?</h2>
+      <p class="muted">
+        Zaměřuje se na naplnění potenciálu, práci s motivací a zvládání tlaku.
+        Pomáhá zlepšit koncentraci, rozhodování a proměnit stres v energii k výkonu.
+      </p>
+      <div class="features">
+        <div class="feature"><h3>Výkon</h3><p>Stabilní hlava v náročných chvílích — soutěž, zkouška, meeting.</p></div>
+        <div class="feature"><h3>Odolnost</h3><p>Práce s emocemi, tlakem a pochybnostmi. Vědomé zvládání stresu.</p></div>
+        <div class="feature"><h3>Směr</h3><p>Jasné cíle, disciplína a pravidelnost. Udržitelný růst.</p></div>
+      </div>
+    </section>
+
+    <!-- O MNĚ -->
+    <section id="o-mne" class="section">
+      <h2>O mně</h2>
+      <p>
+        Jsem <strong>Oliver Kurti</strong>, mentální kouč a trenér. Pracuji se sportovci, studenty i profesionály.
+        Můj přístup spojuje koučink, psychologii a sportovní trénink — s důrazem na praxi a dlouhodobý růst.
+      </p>
+      <a class="card-link" href="o-mne.html" aria-label="Více o mně">Více o mně →</a>
+    </section>
+
+    <!-- CENÍK -->
+    <section id="cenik" class="section">
+      <h2>Ceník</h2>
+      <div class="pricing">
+        <div class="price-card">
+          <h3>60 minut</h3>
+          <div class="price">800 Kč</div>
+          <p>Individuální online / osobně</p>
+        </div>
+        <div class="price-card">
+          <h3>90 minut</h3>
+          <div class="price">1100 Kč</div>
+          <p>Pro hlubší práci a trénink technik</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- OBJEDNÁVKA -->
+    <section id="objednat" class="section">
+      <h2>Formulář pro sjednání schůzky</h2>
+      <!-- Varianta A: mailto (funguje hned) -->
+      <form class="stack" action="mailto:oliver.kurti@seznam.cz" method="post" enctype="text/plain">
+        <label>Jméno a příjmení*<input required name="jmeno" type="text" /></label>
+        <label>E-mail*<input required name="email" type="email" /></label>
+        <label>Způsob setkání*
+          <select name="zpusob" required>
+            <option value="">Vyberte…</option>
+            <option>Koučink naživo</option>
+            <option>Koučink on-line</option>
+          </select>
+        </label>
+        <label>Proč se chci objednat*
+          <textarea required name="duvod" rows="6" placeholder="S čím přicházím, co chci změnit…"></textarea>
+        </label>
+        <button class="btn" type="submit">Odeslat</button>
+      </form>
+
+      <!-- Varianta B (doporučeno): Formspree – až založíš endpoint, nahraď action="...":
+      <form class="stack" action="https://formspree.io/f/TVUJ_KOD" method="POST"> ... </form>
+      -->
+    </section>
+
+    <!-- REFERENCE -->
+    <section id="reference" class="section">
+      <h2>Reference</h2>
+      <div class="testimonials">
+        <blockquote>„Pomohl mi zvládnout tlak před důležitou akcí. Jasné otázky, klid v hlavě.“<footer>— Dominik Z.</footer></blockquote>
+        <blockquote>„Ujasnil jsem si priority a nastavil nový směr. Přístup bez předsudků.“<footer>— David R.</footer></blockquote>
+      </div>
+    </section>
+
+    <!-- KONTAKT sekce (duplicitně kvůli kotvě) -->
+    <section id="kontakt" class="section">
+      <h2>Kontakt</h2>
+      <p class="muted">Preferuješ e-mail nebo rychlý hovor? Obojí je v pohodě.</p>
+      <p><strong>E-mail:</strong> <a href="mailto:oliver.kurti@seznam.cz">oliver.kurti@seznam.cz</a><br>
+         <strong>Telefon:</strong> <a href="tel:+420775112502">+420&nbsp;775&nbsp;112&nbsp;502</a></p>
+      <a class="btn" href="#objednat">Objednat se</a>
     </section>
   </main>
 
-  <!-- ÚZKÝ KONTAKTNÍ PÁS DOLE -->
+  <!-- ÚZKÝ KONTAKTNÍ PÁS (sticky) -->
   <aside class="contact-bar">
     <div class="contact-content">
       <span>E-mail: <a href="mailto:oliver.kurti@seznam.cz">oliver.kurti@seznam.cz</a></span>
@@ -65,7 +139,6 @@
     </div>
   </aside>
 
-  <!-- PATIČKA -->
   <footer class="site-footer">
     <small>© <span id="year"></span> Oliver Kurti</small>
   </footer>
@@ -75,6 +148,3 @@
   </script>
 </body>
 </html>
-
-
-
