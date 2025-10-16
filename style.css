@@ -19,10 +19,10 @@ body{
 
 /* Kotvy & plynulé skrolování (fix proti překrytí sticky headerem) */
 html{
-  scroll-padding-top:70px;   /* výška hlavičky + rezerva */
+  scroll-padding-top:68px;   /* výška hlavičky + rezerva */
   scroll-behavior:smooth;
 }
-.section, .hero{ scroll-margin-top:70px; }
+.section, .hero{ scroll-margin-top:68px; }
 
 @media (max-width:640px){
   html{ scroll-padding-top:96px; }
@@ -183,4 +183,5 @@ blockquote footer{ margin-top:8px; color:var(--muted); font-size:.9rem; }
   .cards{ grid-template-columns:1fr; }
   .features, .pricing, .testimonials{ grid-template-columns:1fr; }
 }
+
 
