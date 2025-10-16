@@ -58,25 +58,77 @@ a:hover{text-decoration:underline;}
 .nav-link.active,.nav-link:hover{background:var(--accent);color:#fff;text-decoration:none;}
 
 /* ===================== HERO ===================== */
-.hero{padding:60px 0 40px;text-align:center;}
-.hero h1{font-size:clamp(32px,5vw,46px);margin-bottom:8px;}
-.hero p.lead{color:var(--muted);margin-top:8px;font-size:1.1rem;}
-.cta-row{display:flex;gap:12px;justify-content:center;margin-top:24px;flex-wrap:wrap;}
+.hero {
+  padding: 80px 0 60px;
+  text-align: center;
+  background: linear-gradient(180deg, #e8f6ff 0%, #ffffff 60%);
+  border-bottom: 1px solid var(--line);
+}
+
+.hero h1 {
+  font-size: clamp(32px, 5vw, 46px);
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+.hero p.lead {
+  color: var(--muted);
+  margin-top: 8px;
+  font-size: 1.1rem;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
 
 /* ===================== TLAČÍTKA ===================== */
-.btn{
-  display:inline-block;padding:10px 18px;border-radius:12px;
-  border:2px solid var(--accent);
-  background:var(--accent);color:#fff;font-weight:600;
-  transition:background .2s,border-color .2s;
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  box-shadow: 0 4px 10px rgba(0, 119, 182, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.3s ease;
 }
-.btn:hover{background:var(--accent-light);border-color:var(--accent-light);}
-.btn.ghost{background:transparent;color:var(--accent);}
-.btn.ghost:hover{background:var(--accent-light);color:#fff;}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 119, 182, 0.3);
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  box-shadow: none;
+}
+
+.btn.ghost:hover {
+  background: var(--accent);
+  color: #fff;
+}
 
 /* ===================== SEKCE ===================== */
-.section{padding:40px 0;border-top:1px solid var(--line);}
-.section:first-of-type{border-top:none;}
+.section {
+  padding: 48px 0;
+  border-top: 1px solid var(--line);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+.section:first-of-type {
+  border-top: none;
+}
+
 .muted{color:var(--muted);}
 
 /* ===================== KARTY / GRID ===================== */
@@ -156,3 +208,4 @@ input:focus,textarea:focus,select:focus{
   .cards,.features,.pricing,.testimonials{grid-template-columns:1fr;}
   html{scroll-padding-top:90px;}
 }
+
