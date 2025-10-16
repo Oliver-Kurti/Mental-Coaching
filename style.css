@@ -19,7 +19,25 @@
 .stack{ display:grid; gap:12px; max-width:680px }
 .stack input, .stack textarea, .stack select{ width:100% }
 
+/* Rezerva pro kotvy, aby je nepřekrýval sticky header */
+html {
+  scroll-padding-top: 84px; /* výška tvé hlavičky + pár px navíc */
+  scroll-behavior: smooth;  /* příjemné plynulé skrolování */
+}
+
+/* Kdybys chtěl rezervu jen pro sekce s ID */
+.section, .hero {
+  scroll-margin-top: 84px;
+}
+
+/* Na menších displejích je header o chlup vyšší – přidej rezervu */
+@media (max-width: 640px) {
+  html { scroll-padding-top: 96px; }
+  .section, .hero { scroll-margin-top: 96px; }
+}
+
 /* Reference */
 .testimonials{ display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); margin-top:12px }
 blockquote{ margin:0; padding:14px 16px; background:var(--panel); border:1px solid var(--line); border-radius:14px }
 blockquote footer{ margin-top:8px; color:var(--muted); font-size:.9rem }
+
