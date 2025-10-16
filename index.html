@@ -83,23 +83,7 @@
     <!-- OBJEDNÁVKA -->
     <section id="objednat" class="section">
       <h2>Formulář pro sjednání schůzky</h2>
-      <!-- Varianta A: mailto (funguje hned) -->
-      <form class="stack" action="https://formspree.io/f/mqaywjeq" method="post" enctype="text/plain">
-        <label>Jméno a příjmení*<input required name="jmeno" type="text" /></label>
-        <label>E-mail*<input required name="email" type="email" /></label>
-        <label>Způsob setkání*
-          <select name="zpusob" required>
-            <option value="">Vyberte…</option>
-            <option>Koučink naživo</option>
-            <option>Koučink on-line</option>
-          </select>
-        </label>
-        <label>Proč se chci objednat*
-          <textarea required name="duvod" rows="6" placeholder="S čím přicházím, co chci změnit…"></textarea>
-        </label>
-        <button class="btn" type="submit">Odeslat</button>
-      </form>
-
+      
       <!-- Varianta B (doporučeno): Formspree – až založíš endpoint, nahraď action="...":
       <form class="stack" action="https://formspree.io/f/TVUJ_KOD" method="POST"> ... </form>
       -->
@@ -133,6 +117,7 @@
   </script>
 </body>
 </html>
+
 
 
 
