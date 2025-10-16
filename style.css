@@ -32,6 +32,11 @@ h2, h3 {
   font-weight: 600;
 }
 
+h1 span.accent {
+  color: var(--accent);
+  font-family: 'Playfair Display', serif;
+}
+
 /* Kotvy & plynulé skrolování (fix proti překrytí sticky headerem) */
 html{
   scroll-padding-top:68px;   /* výška hlavičky + rezerva */
@@ -198,6 +203,7 @@ blockquote footer{ margin-top:8px; color:var(--muted); font-size:.9rem; }
   .cards{ grid-template-columns:1fr; }
   .features, .pricing, .testimonials{ grid-template-columns:1fr; }
 }
+
 
 
 
