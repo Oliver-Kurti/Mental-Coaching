@@ -1,43 +1,185 @@
-/* Sekce a utility */
-.section{ padding:32px 0; border-top:1px solid var(--line) }
-.section:first-of-type{ border-top:none }
-.lead{ color:var(--muted); margin:6px 0 16px }
-.muted{ color:var(--muted) }
-.hero-center{ text-align:center }
-.hero-center .cta-row{ justify-content:center }
+/* ===================== ZÁKLADNÍ PALETA A RESET ===================== */
+:root{
+  --bg:#0b0c0e;
+  --panel:#14161a;
+  --text:#e6e6e6;
+  --muted:#a0a4ab;
+  --accent:#7cdaf9;
+  --line:#23262c;
+}
 
-/* 3 sloupce pro „K čemu je koučink?“ */
-.features{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:14px }
-.feature{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:14px }
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;
+}
+
+/* Kotvy & plynulé skrolování (fix proti překrytí sticky headerem) */
+html{
+  scroll-padding-top:84px;   /* výška hlavičky + rezerva */
+  scroll-behavior:smooth;
+}
+.section, .hero{ scroll-margin-top:84px; }
+
+@media (max-width:640px){
+  html{ scroll-padding-top:96px; }
+  .section, .hero{ scroll-margin-top:96px; }
+}
+
+a{ color:var(--accent); text-decoration:none; }
+a:hover{ text-decoration:underline; }
+
+.container{ max-width:900px; margin:0 auto; padding:24px; }
+
+/* ===================== HLAVIČKA ===================== */
+.site-header{
+  display:flex; justify-content:space-between; align-items:flex-start;
+  gap:16px;
+  padding:16px 24px;
+  border-bottom:1px solid var(--line);
+  background:rgba(10,10,10,.5);
+  position:sticky; top:0;
+  backdrop-filter:saturate(140%) blur(6px);
+  z-index:10;
+}
+
+.brand-block{ display:flex; flex-direction:column; line-height:1.2; }
+.brand-row{ display:flex; align-items:center; gap:10px; }
+
+.logo{ width:28px; height:28px; color:var(--accent); transform:translateY(1px); }
+.brand{ font-weight:700; letter-spacing:.2px; }
+.subtitle{ font-size:.85rem; color:var(--muted); margin-top:2px; letter-spacing:.5px; }
+
+.nav{ display:flex; gap:14px; margin-left:auto; }
+.nav-link{ padding:6px 10px; border-radius:10px; }
+.nav-link.active, .nav-link:hover{ background:var(--panel); text-decoration:none; }
+
+/* jemná animace „jiskry“ v logu */
+.brand-row:hover .logo path:first-child{
+  transform-origin:48px 14px;
+  animation:spark .8s ease-out;
+}
+@keyframes spark{
+  0%{ transform:scale(.7) rotate(0deg); opacity:.6; }
+  60%{ transform:scale(1.15) rotate(12deg); opacity:1; }
+  100%{ transform:scale(1) rotate(0deg); opacity:.9; }
+}
+
+/* ===================== HERO / NADPISY ===================== */
+.hero{ padding:40px 0; }
+.hero h1{ font-size:clamp(28px,4vw,40px); margin:0 0 8px; }
+.accent{ color:var(--accent); }
+.lead{ color:var(--muted); margin:6px 0 16px; }
+.cta-row{ display:flex; gap:12px; margin-top:16px; flex-wrap:wrap; }
+
+/* ===================== TLAČÍTKA ===================== */
+.btn{
+  display:inline-block; padding:10px 16px; border-radius:12px;
+  border:1px solid var(--line); background:var(--panel); color:var(--text);
+  transition:background .2s ease;
+}
+.btn:hover{ background:#1b1e22; }
+.btn.ghost{ background:transparent; }
+
+/* ===================== KARTY / GRID ===================== */
+.cards{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:16px; margin-top:24px;
+}
+.card{
+  background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:18px;
+  box-shadow:0 1px 0 rgba(0,0,0,.3), 0 12px 24px -12px rgba(0,0,0,.4);
+}
+.card h2{ margin:0 0 8px; }
+.card-link{ display:inline-block; margin-top:10px; }
+
+/* ===================== FORMULÁŘE ===================== */
+.form-card form{ display:grid; gap:12px; margin-top:12px; }
+label{ display:grid; gap:6px; font-weight:600; }
+input, textarea, select{
+  background:#0f1114; color:var(--text); border:1px solid var(--line);
+  border-radius:12px; padding:10px 12px; outline:none; width:100%;
+}
+input:focus, textarea:focus, select:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(124,218,249,.15);
+}
+
+/* ===================== ÚZKÝ KONTAKTNÍ PÁS (sticky dole) ===================== */
+.contact-bar{
+  position:sticky; bottom:0; z-index:5;
+  background:#0f1114; border-top:1px solid var(--line);
+}
+.contact-content{
+  max-width:900px; margin:0 auto; padding:8px 16px;
+  display:flex; gap:12px; align-items:center; justify-content:center; flex-wrap:wrap;
+  font-size:.95rem; color:var(--muted);
+}
+.contact-content a{ color:var(--text); }
+.contact-content a:hover{ text-decoration:underline; }
+
+/* ===================== PATIČKA ===================== */
+.site-footer{
+  border-top:1px solid var(--line);
+  padding:18px 24px;
+  color:var(--muted);
+  text-align:center;
+  margin-top:40px;
+}
+
+/* ===================== TYPOGRAFIE DLOUHÝCH TEXTŮ ===================== */
+.prose h1, .prose h2{ margin:0 0 8px; }
+.prose p, .prose ul{ margin:0 0 12px; }
+.prose ul{ padding-left:18px; }
+
+/* ===================== SEKCE PRO JEDNOSTRÁNKOVÝ INDEX ===================== */
+.section{ padding:32px 0; border-top:1px solid var(--line); }
+.section:first-of-type{ border-top:none; }
+.muted{ color:var(--muted); }
+
+/* „K čemu je koučink?“ – 3 boxy */
+.features{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px; margin-top:14px;
+}
+.feature{
+  background:var(--panel); border:1px solid var(--line);
+  border-radius:14px; padding:14px;
+}
 
 /* Ceník */
-.pricing{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:10px }
-.price-card{ background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:18px; text-align:center }
-.price{ font-size:1.6rem; margin:6px 0 8px }
-
-/* Formulář „Objednat se“ */
-.stack{ display:grid; gap:12px; max-width:680px }
-.stack input, .stack textarea, .stack select{ width:100% }
-
-/* Rezerva pro kotvy, aby je nepřekrýval sticky header */
-html {
-  scroll-padding-top: 84px; /* výška tvé hlavičky + pár px navíc */
-  scroll-behavior: smooth;  /* příjemné plynulé skrolování */
+.pricing{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px; margin-top:10px;
 }
-
-/* Kdybys chtěl rezervu jen pro sekce s ID */
-.section, .hero {
-  scroll-margin-top: 84px;
+.price-card{
+  background:var(--panel); border:1px solid var(--line);
+  border-radius:16px; padding:18px; text-align:center;
 }
+.price{ font-size:1.6rem; margin:6px 0 8px; }
 
-/* Na menších displejích je header o chlup vyšší – přidej rezervu */
-@media (max-width: 640px) {
-  html { scroll-padding-top: 96px; }
-  .section, .hero { scroll-margin-top: 96px; }
-}
+/* Objednávkový formulář */
+.stack{ display:grid; gap:12px; max-width:680px; }
 
 /* Reference */
-.testimonials{ display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); margin-top:12px }
-blockquote{ margin:0; padding:14px 16px; background:var(--panel); border:1px solid var(--line); border-radius:14px }
-blockquote footer{ margin-top:8px; color:var(--muted); font-size:.9rem }
+.testimonials{
+  display:grid; gap:16px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  margin-top:12px;
+}
+blockquote{
+  margin:0; padding:14px 16px; background:var(--panel);
+  border:1px solid var(--line); border-radius:14px;
+}
+blockquote footer{ margin-top:8px; color:var(--muted); font-size:.9rem; }
 
+/* ===================== RESPONSIVITA ===================== */
+@media (max-width:640px){
+  .site-header{ flex-direction:column; align-items:flex-start; }
+  .nav{ margin-top:8px; }
+  .cards{ grid-template-columns:1fr; }
+  .features, .pricing, .testimonials{ grid-template-columns:1fr; }
+}
