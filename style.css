@@ -208,10 +208,40 @@ input:focus,textarea:focus,select:focus{
 
 /* ===================== RESPONSIVITA ===================== */
 @media (max-width:640px){
-  .site-header{flex-direction:column;align-items:flex-start;}
-  .nav{margin-top:8px;flex-wrap:wrap;}
-  .cards,.features,.pricing,.testimonials{grid-template-columns:1fr;}
-  html{scroll-padding-top:90px;}
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 16px;            /* menší vnitřní odsazení */
+  }
+
+  .brand-row {
+    gap: 6px;                     /* zmenší rozestup mezi logem a textem */
+  }
+
+  .brand {
+    font-size: 1rem;              /* menší text značky */
+  }
+
+  .nav {
+    margin-top: 4px;
+    flex-wrap: wrap;
+    gap: 6px;                     /* menší mezery mezi odkazy */
+  }
+
+  .nav-link {
+    padding: 4px 8px;
+    font-size: 0.9rem;            /* zmenší písmo v menu */
+  }
+
+  .cards, .features, .pricing, .testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  html {
+    scroll-padding-top: 84px;     /* o trochu nižší mezera při posunu */
+  }
 }
+
+
 
 
