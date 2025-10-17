@@ -13,7 +13,7 @@
   function setHeaderOffset(){
     const header = document.querySelector('.site-header');
     if(!header) return;
-    const h = header.offsetHeight + 6; // + malá rezerva
+    const h = header.offsetHeight + 2; // + malá rezerva
     document.documentElement.style.setProperty('--header-h', h + 'px');
   }
   window.addEventListener('load', setHeaderOffset);
@@ -97,6 +97,7 @@
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
+
 
 
 
