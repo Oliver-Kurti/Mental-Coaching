@@ -197,3 +197,8 @@ input:focus,textarea:focus,select:focus{
 
   .cards,.features,.pricing,.testimonials{ grid-template-columns:1fr; }
 }
+
+.section,
+.hero {
+  scroll-margin-top: calc(var(--header-h) - 4px);
+}
