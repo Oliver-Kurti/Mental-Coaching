@@ -23,6 +23,21 @@
     clearTimeout(t); t = setTimeout(setHeaderOffset, 100);
   }, {passive:true});
 </script>
+  <script>
+  function setHeaderOffset(){
+    const header = document.querySelector('.site-header');
+    if(!header) return;
+    let extra = window.innerWidth < 640 ? 2 : 6; // na mobilech menší rezerva
+    const h = header.offsetHeight + extra;
+    document.documentElement.style.setProperty('--header-h', h + 'px');
+  }
+  window.addEventListener('load', setHeaderOffset);
+  window.addEventListener('resize', setHeaderOffset);
+  window.addEventListener('orientationchange', setHeaderOffset);
+  let t; window.addEventListener('scroll', () => {
+    clearTimeout(t); t = setTimeout(setHeaderOffset, 100);
+  }, {passive:true});
+</script>
 <body>
   <!-- HLAVIČKA (ponecháváme tvůj styl + logo kovadliny) -->
   <header class="site-header">
@@ -156,6 +171,7 @@
   </script>
 </body>
 </html>
+
 
 
 
