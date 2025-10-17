@@ -202,3 +202,13 @@ input:focus,textarea:focus,select:focus{
 .hero {
   scroll-margin-top: calc(var(--header-h) - 4px);
 }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h);
+}
+
+.section,
+.hero {
+  scroll-margin-top: calc(var(--header-h) - 6px);
+}
