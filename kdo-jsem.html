@@ -9,6 +9,20 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
 </head>
+  <script>
+  function setHeaderOffset(){
+    const header = document.querySelector('.site-header');
+    if(!header) return;
+    const h = header.offsetHeight + 6; // + malá rezerva
+    document.documentElement.style.setProperty('--header-h', h + 'px');
+  }
+  window.addEventListener('load', setHeaderOffset);
+  window.addEventListener('resize', setHeaderOffset);
+  window.addEventListener('orientationchange', setHeaderOffset);
+  let t; window.addEventListener('scroll', () => {
+    clearTimeout(t); t = setTimeout(setHeaderOffset, 100);
+  }, {passive:true});
+</script>
 <body>
   <header class="site-header">
     <div class="brand-block">
@@ -83,6 +97,7 @@
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
+
 
 
 
