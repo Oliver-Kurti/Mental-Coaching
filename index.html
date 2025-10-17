@@ -27,7 +27,7 @@
   function setHeaderOffset(){
     const header = document.querySelector('.site-header');
     if(!header) return;
-    let extra = window.innerWidth < 640 ? 2 : 6; // na mobilech menší rezerva
+    let extra = window.innerWidth < 640 ? 0 : 4;
     const h = header.offsetHeight + extra;
     document.documentElement.style.setProperty('--header-h', h + 'px');
   }
@@ -171,6 +171,7 @@
   </script>
 </body>
 </html>
+
 
 
 
