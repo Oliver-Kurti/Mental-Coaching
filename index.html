@@ -13,29 +13,24 @@
   function setHeaderOffset(){
     const header = document.querySelector('.site-header');
     if(!header) return;
-    const h = header.offsetHeight + 0; // + malá rezerva
-    document.documentElement.style.setProperty('--header-h', h + 'px');
+    // Změř aktuální výšku hlavičky
+    const h = header.offsetHeight;
+    // Přidej drobnou rezervu (4px na desktopu, 0 na mobilech)
+    const extra = window.innerWidth < 640 ? 0 : 4;
+    const total = h + extra;
+    // Nastav CSS proměnnou
+    document.documentElement.style.setProperty('--header-h', total + 'px');
   }
+
+  // Spustí se po načtení i při změně velikosti/orientace
   window.addEventListener('load', setHeaderOffset);
   window.addEventListener('resize', setHeaderOffset);
   window.addEventListener('orientationchange', setHeaderOffset);
-  let t; window.addEventListener('scroll', () => {
-    clearTimeout(t); t = setTimeout(setHeaderOffset, 100);
-  }, {passive:true});
-</script>
-  <script>
-  function setHeaderOffset(){
-    const header = document.querySelector('.site-header');
-    if(!header) return;
-    let extra = window.innerWidth < 640 ? 0 : 4;
-    const h = header.offsetHeight + extra;
-    document.documentElement.style.setProperty('--header-h', h + 'px');
-  }
-  window.addEventListener('load', setHeaderOffset);
-  window.addEventListener('resize', setHeaderOffset);
-  window.addEventListener('orientationchange', setHeaderOffset);
-  let t; window.addEventListener('scroll', () => {
-    clearTimeout(t); t = setTimeout(setHeaderOffset, 100);
+  // Na mobilech se URL lišta často schovává/zobrazuje, proto i při scrollu
+  let t;
+  window.addEventListener('scroll', () => {
+    clearTimeout(t);
+    t = setTimeout(setHeaderOffset, 150);
   }, {passive:true});
 </script>
 <body>
@@ -171,6 +166,7 @@
   </script>
 </body>
 </html>
+
 
 
 
