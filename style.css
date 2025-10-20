@@ -230,9 +230,10 @@ html {
 .team-photo {
   display: block;
   width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
+  max-height: 400px;        /* výšku můžeš měnit podle chuti */
+   object-fit: cover;      /* zachová proporce a fotku „ořízne“ */
+  border-radius: 12px;
+  margin: 0 auto;
 }
 .team-figure figcaption {
   padding: 10px 14px;
@@ -240,6 +241,7 @@ html {
   color: var(--muted);
   text-align: center;
 }
+
 
 
 
