@@ -214,3 +214,32 @@ html {
 /* Odsazení cíle při prokliku – jen scroll-margin, bez scroll-padding na <html> */
 
 
+.team-figure {
+  margin: 20px 0 28px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.team-figure:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+.team-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.team-figure figcaption {
+  padding: 10px 14px;
+  font-size: .95rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+
+
