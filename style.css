@@ -224,19 +224,28 @@ html {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.team-figure:hover {
-  transform: scale(1.01);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+team-figure {
+  margin: 12px 0 16px;          /* zmenšené mezery nahoře i dole */
+  background: none;             /* odstraní bílý panel okolo fotky */
+  border: none;                 /* žádný rámeček */
+  border-radius: 10px;
+  box-shadow: none;             /* žádný stín */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .team-photo {
   display: block;
   width: 100%;
   height: auto;
-  max-height: 400px;      /* 🔹 omezí výšku na desktopu */
+  max-height: 500px;      /* 🔹 omezí výšku na desktopu */
   object-fit: contain;    /* 🔹 zobrazí celou fotku */
-  border-radius: 14px;
+  border-radius: 10px;
   margin: 0 auto;
 }
+
+background: var(--panel);
+border: 1px solid var(--line);
+box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+
 
 @media (max-width: 640px) {
   .team-photo {
@@ -250,6 +259,7 @@ html {
   color: var(--muted);
   text-align: center;
 }
+
 
 
 
