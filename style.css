@@ -226,11 +226,12 @@ html {
 .team-photo {
   display: block;
   width: 100%;
-  height: auto;
-  max-height: 380px;          /* 🔹 menší výška na počítači */
-  object-fit: contain;        /* zachová proporce, nic neořízne */
-  border-radius: 6px;
+  max-height: 400px;        /* výšku můžeš měnit podle chuti */
+  object-fit: cover;        /* zachová proporce a fotku „ořízne“ */
+  border-radius: 12px;
   margin: 0 auto;
+}
+
 }
 
 @media (max-width: 640px) {
@@ -245,6 +246,7 @@ html {
   color: var(--muted);
   text-align: center;
 }
+
 
 
 
