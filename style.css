@@ -215,37 +215,23 @@ html {
 
 
 .team-figure {
-  margin: 20px 0 28px;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  /* overflow: hidden;  🧨 odstraníme ořezávání */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 8px 0 12px;         /* menší mezery nad a pod */
+  background: none;           /* odstraní bílý panel */
+  border: none;               /* odstraní rámeček */
+  border-radius: 0;           /* rovné hrany */
+  box-shadow: none;           /* žádný stín */
+  transition: none;           /* vypne animace */
 }
 
-team-figure {
-  margin: 12px 0 16px;          /* zmenšené mezery nahoře i dole */
-  background: none;             /* odstraní bílý panel okolo fotky */
-  border: none;                 /* žádný rámeček */
-  border-radius: 10px;
-  box-shadow: none;             /* žádný stín */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 .team-photo {
   display: block;
   width: 100%;
   height: auto;
-  max-height: 500px;      /* 🔹 omezí výšku na desktopu */
-  object-fit: contain;    /* 🔹 zobrazí celou fotku */
-  border-radius: 10px;
+  max-height: 380px;          /* 🔹 menší výška na počítači */
+  object-fit: contain;        /* zachová proporce, nic neořízne */
+  border-radius: 6px;
   margin: 0 auto;
 }
-
-background: var(--panel);
-border: 1px solid var(--line);
-box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-
 
 @media (max-width: 640px) {
   .team-photo {
@@ -259,6 +245,7 @@ box-shadow: 0 2px 6px rgba(0,0,0,0.04);
   color: var(--muted);
   text-align: center;
 }
+
 
 
 
