@@ -231,8 +231,9 @@ html {
 .team-photo {
   display: block;
   width: 100%;
-  height: auto;           /* automatická výška podle poměru stran */
-  object-fit: contain;    /* zobrazí celou fotku bez ořezu */
+  height: auto;
+  max-height: 400px;      /* 🔹 omezí výšku na desktopu */
+  object-fit: contain;    /* 🔹 zobrazí celou fotku */
   border-radius: 14px;
   margin: 0 auto;
 }
@@ -249,6 +250,7 @@ html {
   color: var(--muted);
   text-align: center;
 }
+
 
 
 
