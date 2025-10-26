@@ -226,7 +226,7 @@ html {
 .team-photo {
   display: block;
   width: 100%;
-  max-height: 400px;        /* výšku můžeš měnit podle chuti */
+  max-height: 350px;        /* výšku můžeš měnit podle chuti */
   object-fit: cover;        /* zachová proporce a fotku „ořízne“ */
   border-radius: 12px;
   margin: 0 auto;
@@ -246,6 +246,7 @@ html {
   color: var(--muted);
   text-align: center;
 }
+
 
 
 
