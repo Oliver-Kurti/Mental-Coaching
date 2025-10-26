@@ -230,17 +230,25 @@ html {
 .team-photo {
   display: block;
   width: 100%;
-  max-height: 400px;        /* výšku můžeš měnit podle chuti */
-  object-fit: cover;        /* zachová proporce a fotku „ořízne“ */
+  height: auto;           /* automatická výška podle poměru stran */
+  object-fit: contain;    /* zobrazí celou fotku bez ořezu */
   border-radius: 12px;
   margin: 0 auto;
 }
+
+@media (max-width: 640px) {
+  .team-photo {
+    max-height: 500px;     /* omezí výšku, ale zachová celý obrázek */
+  }
+}
+
 .team-figure figcaption {
   padding: 10px 14px;
   font-size: .95rem;
   color: var(--muted);
   text-align: center;
 }
+
 
 
 
