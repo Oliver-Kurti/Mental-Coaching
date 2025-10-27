@@ -121,6 +121,13 @@ a:hover{text-decoration:underline;}
 .section:first-of-type{ border-top:none; }
 .muted{color:var(--muted);}
 
+.section p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;              /* povolí automatické dělení slov */
+}
+
+
 /* ===================== KARTY / GRID ===================== */
 .cards{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
@@ -246,6 +253,7 @@ html {
   color: var(--muted);
   text-align: center;
 }
+
 
 
 
