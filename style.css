@@ -123,9 +123,13 @@ a:hover{text-decoration:underline;}
 
 .section p {
   text-align: justify;
-  text-justify: auto;
+  text-justify: inter-word;
 }
 
+.feature p {
+  text-align: left;           /* zarovnání nalevo */
+  text-justify: auto;         /* vypne roztažené mezery */
+}
 
 /* ===================== KARTY / GRID ===================== */
 .cards{
@@ -252,6 +256,7 @@ html {
   color: var(--muted);
   text-align: center;
 }
+
 
 
 
