@@ -123,7 +123,7 @@ a:hover{text-decoration:underline;}
 
 .section p {
   text-align: justify;
-  text-justify: inter-word;
+  text-justify: auto;
 }
 
 
@@ -252,6 +252,7 @@ html {
   color: var(--muted);
   text-align: center;
 }
+
 
 
 
