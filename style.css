@@ -124,7 +124,6 @@ a:hover{text-decoration:underline;}
 .section p {
   text-align: justify;
   text-justify: inter-word;
-  hyphens: auto;              /* povolí automatické dělení slov */
 }
 
 
@@ -253,6 +252,7 @@ html {
   color: var(--muted);
   text-align: center;
 }
+
 
 
 
